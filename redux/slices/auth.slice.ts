@@ -3,13 +3,12 @@ import { UserState } from "../../types/type.user";
 
 export const initialState: UserState = {
   isLoggingIn: false,
-  isLoggingOut: true,
   user: {
     uid: "",
-    email: "",
     first: "",
     last: "",
-    status: 0,
+    email: "",
+    photoURL: "",
   },
 };
 
@@ -19,17 +18,16 @@ export const authSlice = createSlice({
   reducers: {
     login: (state, payload) => {
       const load = payload.payload;
-      state.isLoggingIn = load.isLoggingIn;
-      state.isLoggingOut = load.isLoggingOut;
+      state.isLoggingIn = true;
       state.user.uid = load.user.uid;
-      state.user.email = load.user.email;
       state.user.first = load.user.first;
       state.user.last = load.user.last;
-      state.user.status = load.user.status;
+      state.user.email = load.user.email;
+      state.user.photoURL = load.user.photoURL;
+      console.log("connected");
     },
     logout: (state) => {
       state.isLoggingIn = false;
-      state.isLoggingOut = true;
       console.log("logout");
     },
   },
