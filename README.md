@@ -1,3 +1,12 @@
+# Consignes
+Vous devez rendre l’intégralité de l'évaluation dans un répertoire git public. 
+L’exercice devra comprendre l'intégralité du projet avec l'environnement de développement vu pendant le cours. (libre à vous d’ajouter et d’améliorer l'environnement de base).
+Le rendu sera à effectuer le 11 février 2021 vous aurez la journée du 13 décembre pour continuer votre projet et vous faire aider du prof si vous en avez besoin.
+Vous devez bien entendu réaliser l’intégralité du projet.
+Le projet devra être réalisé avec le framework css de votre choix .
+Il est en revanche obligatoire d’utiliser un framework css en react component.
+
+# NEXTJS
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
