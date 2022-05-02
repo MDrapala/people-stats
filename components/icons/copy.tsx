@@ -2,7 +2,7 @@ const Copy = ({
   color,
   size,
   height,
-  width,
+  width
 }: {
   color?: string;
   size?: number;
@@ -13,9 +13,9 @@ const Copy = ({
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
-    height={size ? size : height}
-    width={size ? size : width}
-    stroke={color ? color : "currentColor"}
+    height={size || height}
+    width={size || width}
+    stroke={color || 'currentColor'}
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"

@@ -1,13 +1,13 @@
-import { useEffect, useState, useMemo } from "react";
-import lodash from "lodash";
+import { useEffect, useState, useMemo } from 'react';
+import lodash from 'lodash';
 
-import { DB_USER } from "../../lib/data/dbusers";
-import Donnuts from "./stats/Donnuts";
+import { DB_USER } from '../../lib/data/dbusers';
+import Donnuts from './stats/Donnuts';
 
-//Tools tables
-import Tables from "../tools/tables";
-import { countryManagement } from "./table/columnsTables";
-import { optionsManagement } from "./table/optionsTables";
+// Tools tables
+import Tables from '../tools/tables';
+import { countryManagement } from './table/columnsTables';
+import { optionsManagement } from './table/optionsTables';
 
 const Dashboard = () => {
   const columns = useMemo(() => countryManagement, []);
@@ -21,78 +21,78 @@ const Dashboard = () => {
     loadingUsers();
   }, []);
 
-  //Gender Donnuts
-  let { female, male } = lodash.countBy(DB_USER, "gender");
-  let labelGender = [];
+  // Gender Donnuts
+  const { female, male } = lodash.countBy(DB_USER, 'gender');
+  const labelGender = [];
   users.map((user) => {
     if (!labelGender.includes(user.gender)) {
       labelGender.push(user.gender);
     }
   });
 
-  //Country Donnuts
-  let country = Object.entries(lodash.countBy(DB_USER, "location.country")).map(
-    ([key, value]) => value
+  // Country Donnuts
+  const country = Object.entries(lodash.countBy(DB_USER, 'location.country')).map(
+    ([value]) => value
   );
-  let labelCountry = [];
+  const labelCountry = [];
   users.map((user) => {
     if (!labelCountry.includes(user.location.country)) {
       labelCountry.push(user.location.country);
     }
   });
 
-  const data = (label, data) => {
+  const data = <T,>(label: T, datas: T) => {
     return {
       labels: label,
       datasets: [
         {
-          data: data,
+          datas,
           backgroundColor: [
-            "#FF6384",
-            "#36A2EB",
-            "#FFCE56",
-            "#32CD32",
-            "#4B0082",
-            "#9932CC",
-            "#87CEEB",
-            "#DEB887",
-            "#FFD700",
-            "#FFA500",
-            "#FF4500",
-            "#DA70D6",
-            "#FF69B4",
-            "#FF1493",
-            "#C71585",
-            "#DB7093",
-            "#FF00FF",
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
+            '#32CD32',
+            '#4B0082',
+            '#9932CC',
+            '#87CEEB',
+            '#DEB887',
+            '#FFD700',
+            '#FFA500',
+            '#FF4500',
+            '#DA70D6',
+            '#FF69B4',
+            '#FF1493',
+            '#C71585',
+            '#DB7093',
+            '#FF00FF'
           ],
           hoverBackgroundColor: [
-            "#FF6384",
-            "#36A2EB",
-            "#FFCE56",
-            "#32CD32",
-            "#4B0082",
-            "#9932CC",
-            "#87CEEB",
-            "#DEB887",
-            "#FFD700",
-            "#FFA500",
-            "#FF4500",
-            "#DA70D6",
-            "#FF69B4",
-            "#FF1493",
-            "#C71585",
-            "#DB7093",
-            "#FF00FF",
-          ],
-        },
-      ],
+            '#FF6384',
+            '#36A2EB',
+            '#FFCE56',
+            '#32CD32',
+            '#4B0082',
+            '#9932CC',
+            '#87CEEB',
+            '#DEB887',
+            '#FFD700',
+            '#FFA500',
+            '#FF4500',
+            '#DA70D6',
+            '#FF69B4',
+            '#FF1493',
+            '#C71585',
+            '#DB7093',
+            '#FF00FF'
+          ]
+        }
+      ]
     };
   };
 
-  let topCountry: any = [];
-  Object.entries(lodash.countBy(DB_USER, "location.country")).map(
-    ([key, value]: any) => topCountry.push({ country: key, count: value })
+  const topCountry = [];
+  Object.entries(lodash.countBy(DB_USER, 'location.country')).map(
+    ([key, value]) => topCountry.push({ country: key, count: value })
   );
 
   return (
@@ -113,9 +113,9 @@ const Dashboard = () => {
                 stroke="currentColor"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M5 11l7-7 7 7M5 19l7-7 7 7"
                 />
               </svg>
@@ -123,8 +123,8 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex items-center justify-between mt-10 align-items">
-          <Donnuts title={"Gender"} data={data(labelGender, [female, male])} />
-          <Donnuts title={"Country"} data={data(labelCountry, country)} />
+          <Donnuts title={'Gender'} items={data(labelGender, [female, male])} />
+          <Donnuts title={'Country'} items={data(labelCountry, country)} />
         </div>
         <div className="mt-10">
           <Tables

@@ -1,8 +1,8 @@
-//Redux
-import { useRouter } from "next/router";
+// Redux
+import { useRouter } from 'next/router';
 
-//Icons
-import { restrictedAllRight } from "../../hooks/navbar";
+// Icons
+import { restrictedAllRight } from '../../hooks/navbar';
 
 export default function Header() {
   const router = useRouter();
@@ -17,7 +17,7 @@ export default function Header() {
               <div
                 key={i}
                 className={`${
-                  url == e.name.toLowerCase() && "bg-gray-100"
+                  url == e.name.toLowerCase() && 'bg-gray-100'
                 } static flex items-center p-2 my-6 hover:text-gray-800 hover:bg-gray-100 transition-colors dark:hover:text-white dark:hover:bg-gray-600 duration-200 text-gray-800 dark:text-gray-100 rounded-lg dark:bg-gray-600 cursor-pointer`}
                 onClick={() => router.push(e.link)}
               >

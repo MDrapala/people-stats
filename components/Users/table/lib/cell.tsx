@@ -1,10 +1,8 @@
-import { useState, useLayoutEffect, useRef } from "react";
-import copy from "copy-to-clipboard";
-import { useAppSelector } from "../../../../redux/hooks";
+import { useState } from 'react';
+import copy from 'copy-to-clipboard';
+import Copy from '../../../icons/copy';
 
-import Copy from "../../../icons/copy";
-
-export function AvatarCell({ row }: any) {
+export function AvatarCell ({ row })  {
   return (
     <>
       <div className="flex items-center">
@@ -15,8 +13,8 @@ export function AvatarCell({ row }: any) {
             referrerPolicy="no-referrer"
             alt=""
             src={
-              row.original.picture.thumbnail ||
-              "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm"
+              row.original.picture.thumbnail
+              || 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm'
             }
           />
         </div>
@@ -25,16 +23,16 @@ export function AvatarCell({ row }: any) {
   );
 }
 
-export function userCell({ row }: any) {
+export function UserCell({ row }) {
   const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState("");
+  const [copiedName, setCopiedName] = useState('');
   return (
     <>
       <div
         className={`flex items-center cursor-pointer text-sm font-medium text-gray-900 ${
-          copied && copiedName === "userName"
-            ? "text-blue-500"
-            : "text-gray-500"
+          copied && copiedName === 'userName'
+            ? 'text-blue-500'
+            : 'text-gray-500'
         }`}
       >
         <div
@@ -43,10 +41,10 @@ export function userCell({ row }: any) {
             e.stopPropagation();
             copy(`${row.original.first} ${row.original.last}`);
             setCopied(true);
-            setCopiedName("userName");
+            setCopiedName('userName');
             setTimeout(() => {
               setCopied(false);
-              setCopiedName("");
+              setCopiedName('');
             }, 1000);
           }}
         >
@@ -60,7 +58,7 @@ export function userCell({ row }: any) {
       </div>
       <div
         className={`flex items-center cursor-pointer text-sm font-medium ${
-          copied && copiedName === "email" ? "text-blue-500" : "text-gray-500"
+          copied && copiedName === 'email' ? 'text-blue-500' : 'text-gray-500'
         }`}
       >
         <div
@@ -69,15 +67,15 @@ export function userCell({ row }: any) {
             e.stopPropagation();
             copy(row.original.email);
             setCopied(true);
-            setCopiedName("email");
+            setCopiedName('email');
             setTimeout(() => {
               setCopied(false);
-              setCopiedName("");
+              setCopiedName('');
             }, 1000);
           }}
         >
           {row?.original?.email?.substr(0, 22)}
-          <span>{row?.original?.email?.length >= 23 && "..."}</span>
+          <span>{row?.original?.email?.length >= 23 && '...'}</span>
           {row?.original?.email && (
             <div className="ml-2 flex items-center justify-between">
               <Copy size={15} />
@@ -89,14 +87,14 @@ export function userCell({ row }: any) {
   );
 }
 
-export function TitleCell({ row }: any) {
+export function TitleCell({ row }) {
   const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState("");
+  const [copiedName, setCopiedName] = useState('');
   return (
     <>
       <div
         className={`flex items-center text-sm font-medium ${
-          copied && copiedName === "first" ? "text-blue-500" : "text-gray-900"
+          copied && copiedName === 'first' ? 'text-blue-500' : 'text-gray-900'
         }`}
       >
         <div
@@ -105,10 +103,10 @@ export function TitleCell({ row }: any) {
             e.stopPropagation();
             copy(row.original.name.title);
             setCopied(true);
-            setCopiedName("title");
+            setCopiedName('title');
             setTimeout(() => {
               setCopied(false);
-              setCopiedName("");
+              setCopiedName('');
             }, 1000);
           }}
         >
@@ -124,14 +122,14 @@ export function TitleCell({ row }: any) {
   );
 }
 
-export function FirstCell({ row }: any) {
+export function FirstCell({ row }) {
   const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState("");
+  const [copiedName, setCopiedName] = useState('');
   return (
     <>
       <div
         className={`flex items-center text-sm font-medium ${
-          copied && copiedName === "first" ? "text-blue-500" : "text-gray-900"
+          copied && copiedName === 'first' ? 'text-blue-500' : 'text-gray-900'
         }`}
       >
         <div
@@ -140,10 +138,10 @@ export function FirstCell({ row }: any) {
             e.stopPropagation();
             copy(row.original.name.first);
             setCopied(true);
-            setCopiedName("first");
+            setCopiedName('first');
             setTimeout(() => {
               setCopied(false);
-              setCopiedName("");
+              setCopiedName('');
             }, 1000);
           }}
         >
@@ -159,14 +157,14 @@ export function FirstCell({ row }: any) {
   );
 }
 
-export function LastCell({ row }: any) {
+export function LastCell({ row }) {
   const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState("");
+  const [copiedName, setCopiedName] = useState('');
   return (
     <>
       <div
         className={`flex items-center text-sm font-medium ${
-          copied && copiedName === "last" ? "text-blue-500" : "text-gray-900"
+          copied && copiedName === 'last' ? 'text-blue-500' : 'text-gray-900'
         }`}
       >
         <div
@@ -175,10 +173,10 @@ export function LastCell({ row }: any) {
             e.stopPropagation();
             copy(row.original.name.last);
             setCopied(true);
-            setCopiedName("last");
+            setCopiedName('last');
             setTimeout(() => {
               setCopied(false);
-              setCopiedName("");
+              setCopiedName('');
             }, 1000);
           }}
         >
@@ -194,14 +192,14 @@ export function LastCell({ row }: any) {
   );
 }
 
-export function PhoneCell({ row }: any) {
+export function PhoneCell({ row }) {
   const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState("");
+  const [copiedName, setCopiedName] = useState('');
   return (
     <>
       <div
         className={`flex items-center text-sm font-medium ${
-          copied && copiedName === "phone" ? "text-blue-500" : "text-gray-900"
+          copied && copiedName === 'phone' ? 'text-blue-500' : 'text-gray-900'
         }`}
       >
         <div
@@ -210,10 +208,10 @@ export function PhoneCell({ row }: any) {
             e.stopPropagation();
             copy(row.original.phone);
             setCopied(true);
-            setCopiedName("first");
+            setCopiedName('first');
             setTimeout(() => {
               setCopied(false);
-              setCopiedName("");
+              setCopiedName('');
             }, 1000);
           }}
         >
@@ -229,14 +227,14 @@ export function PhoneCell({ row }: any) {
   );
 }
 
-export function AdressCell({ row }: any) {
+export function AdressCell({ row }) {
   const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState("");
+  const [copiedName, setCopiedName] = useState('');
   return (
     <>
       <div
         className={`flex items-center text-sm font-medium ${
-          copied && copiedName === "adress" ? "text-blue-500" : "text-gray-900"
+          copied && copiedName === 'adress' ? 'text-blue-500' : 'text-gray-900'
         }`}
       >
         <div
@@ -245,10 +243,10 @@ export function AdressCell({ row }: any) {
             e.stopPropagation();
             copy(row.original.location.adress);
             setCopied(true);
-            setCopiedName("adress");
+            setCopiedName('adress');
             setTimeout(() => {
               setCopied(false);
-              setCopiedName("");
+              setCopiedName('');
             }, 1000);
           }}
         >

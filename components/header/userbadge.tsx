@@ -1,21 +1,20 @@
-import { useState } from "react";
-import { DateTime } from "luxon";
+import { useState } from 'react';
+import { DateTime } from 'luxon';
 
-//Redux
-import { logout } from "../../redux/slices/auth.slice";
-import { useAppSelector, useAppDispatch } from "../../redux/hooks";
+// Redux
+import { logout } from '../../redux/slices/auth.slice';
+import { useAppSelector, useAppDispatch } from '../../redux/hooks';
 
-//Icons
-import ChevronDown from "../icons/chevronDown";
-import ChevronUp from "../icons/chevronUp";
-import ArrowOut from "../icons/arrowOut";
+// Icons
+import ChevronDown from '../icons/chevronDown';
+import ChevronUp from '../icons/chevronUp';
+import ArrowOut from '../icons/arrowOut';
 
 const UserBadge = () => {
   const dispatch = useAppDispatch();
-  const { auth } = useAppSelector((e) => e);
+  const { auth } = useAppSelector((state) => state);
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  let date = DateTime.local();
   const signOut = () => {
     dispatch(logout());
   };
@@ -26,7 +25,7 @@ const UserBadge = () => {
       <div className="relative z-20 flex flex-col justify-end h-full px-3 md:w-full">
         <div className="relative p-1 flex items-center w-full space-x-4 justify-end">
           <div className="flex p-2 items-center rounded-full text-gray-400  bg-white shadow text-md">
-            {DateTime.now().setLocale("fr").toFormat("MMMM dd, yyyy  hh:mm")}
+            {DateTime.now().setLocale('fr').toFormat('MMMM dd, yyyy  hh:mm')}
           </div>
 
           <span className="w-1 h-8 rounded-lg bg-gray-200" />

@@ -1,19 +1,19 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { UserState } from "../../types/type.user";
+import { createSlice } from '@reduxjs/toolkit';
+import { UserState } from '../../types/type.user';
 
 export const initialState: UserState = {
   isLoggingIn: false,
   user: {
-    uid: "",
-    first: "",
-    last: "",
-    email: "",
-    photoURL: "",
-  },
+    uid: '',
+    first: '',
+    last: '',
+    email: '',
+    photoURL: ''
+  }
 };
 
 export const authSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState,
   reducers: {
     login: (state, payload) => {
@@ -24,15 +24,15 @@ export const authSlice = createSlice({
       state.user.last = load.user.last;
       state.user.email = load.user.email;
       state.user.photoURL = load.user.photoURL;
-      console.log("connected");
+      console.log('connected');
     },
     logout: (state) => {
       state.isLoggingIn = false;
-      console.log("logout");
-    },
-  },
+      console.log('logout');
+    }
+  }
 });
 
 export const { login, logout } = authSlice.actions;
-export const selectAuth = (state: any) => state;
+export const selectAuth = (state) => state;
 export default authSlice.reducer;

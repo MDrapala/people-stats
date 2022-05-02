@@ -1,13 +1,13 @@
-//React / Next
-import type { AppProps } from "next/app";
+// React / Next
+import type { AppProps } from 'next/app'
 
-//Redux
-import { Provider } from "react-redux";
-import store, { persistor } from "../redux/store";
-import { PersistGate } from "redux-persist/integration/react";
+// Redux
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
+import store, { persistor } from '../redux/store'
 
-//CSS
-import "../styles/globals.css";
+// CSS
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </PersistGate>
     </Provider>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

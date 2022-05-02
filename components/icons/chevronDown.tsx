@@ -2,7 +2,7 @@ const ChevronDown = ({
   color,
   size,
   height,
-  width,
+  width
 }: {
   color?: string;
   size?: number;
@@ -11,9 +11,9 @@ const ChevronDown = ({
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    height={size ? size : height}
-    width={size ? size : width}
-    stroke={color ? color : "currentColor"}
+    height={size || height}
+    width={size || width}
+    stroke={color || 'currentColor'}
     viewBox="0 0 24 24"
     fill="none"
     strokeWidth="2"
