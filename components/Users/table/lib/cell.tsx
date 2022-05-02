@@ -87,7 +87,7 @@ export function UserCell({ row }) {
   )
 }
 
-export function TitleCell({ row }) {
+export function GenderCell({ row }) {
   const [copied, setCopied] = useState(false)
   const [copiedName, setCopiedName] = useState('')
   return (
@@ -95,6 +95,41 @@ export function TitleCell({ row }) {
       <div
         className={`flex items-center text-sm font-medium ${
           copied && copiedName === 'first' ? 'text-blue-500' : 'text-gray-900'
+        }`}
+      >
+        <div
+          className="flex items-center"
+          onClick={(e) => {
+            e.stopPropagation()
+            copy(row.original.gender)
+            setCopied(true)
+            setCopiedName('title')
+            setTimeout(() => {
+              setCopied(false)
+              setCopiedName('')
+            }, 1000)
+          }}
+        >
+          {row.original.gender}
+          {row.original.gender && (
+            <div className="ml-2 items-center cursor-pointer justify-between">
+              <Copy size={15} />
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  )
+}
+
+export function TitleCell({ row }) {
+  const [copied, setCopied] = useState(false)
+  const [copiedName, setCopiedName] = useState('')
+  return (
+    <>
+      <div
+        className={`flex items-center text-sm font-medium ${
+          copied && copiedName === 'titleName' ? 'text-blue-500' : 'text-gray-900'
         }`}
       >
         <div

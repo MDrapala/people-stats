@@ -6,9 +6,10 @@ import {
   FirstCell,
   LastCell,
   AdressCell,
-  PhoneCell
+  PhoneCell,
+  GenderCell
 } from './lib/cell'
-import {SelectColumnFilter} from "./lib/filter";
+import { SelectColumnFilter } from "./lib/filter";
 
 export const usersManagement = [
   {
@@ -24,8 +25,13 @@ export const usersManagement = [
   {
     Header: 'Title',
     accessor: 'name.title',
-    Filter: SelectColumnFilter,
     Cell: TitleCell
+  },
+  {
+    Header: 'Gender',
+    accessor: 'gender',
+    Filter: SelectColumnFilter,
+    Cell: GenderCell
   },
   {
     Header: 'Firstname',

@@ -8,6 +8,7 @@ import Donnuts from './stats/Donnuts'
 import Tables from '../tools/tables'
 import { countryManagement } from './table/columnsTables'
 import { optionsManagement } from './table/optionsTables'
+import Users from '../tools/icons/users'
 
 const Dashboard = () => {
   const columns = useMemo(() => countryManagement, [])
@@ -106,20 +107,7 @@ const Dashboard = () => {
               <h1 className="text-2xl font-bold">{users.length}</h1>
             </div>
             <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-indigo-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M5 11l7-7 7 7M5 19l7-7 7 7"
-                />
-              </svg>
+              <Users size={50} />
             </div>
           </div>
         </div>
