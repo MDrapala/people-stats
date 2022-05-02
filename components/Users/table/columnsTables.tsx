@@ -8,6 +8,7 @@ import {
   AdressCell,
   PhoneCell
 } from './lib/cell'
+import {SelectColumnFilter} from "./lib/filter";
 
 export const usersManagement = [
   {
@@ -23,6 +24,7 @@ export const usersManagement = [
   {
     Header: 'Title',
     accessor: 'name.title',
+    Filter: SelectColumnFilter,
     Cell: TitleCell
   },
   {

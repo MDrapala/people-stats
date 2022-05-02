@@ -123,8 +123,8 @@ const Dashboard = () => {
           </div>
         </div>
         <div className="flex items-center justify-between mt-10 align-items">
-          <Donnuts title={'Gender'} items={data(labelGender, [female, male])} />
-          <Donnuts title={'Country'} items={data(labelCountry, country)} />
+          <Donnuts title="Gender" items={data(labelGender, [female, male])} />
+          <Donnuts title="Country" items={data(labelCountry, country)} />
         </div>
         <div className="mt-10">
           <Tables
