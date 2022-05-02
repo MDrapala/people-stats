@@ -21,8 +21,8 @@ const Tables = ({ fetchData, columns, options }) => {
   const router = useRouter()
   const [expanded, setExpanded] = useState<boolean>(false)
   const [id, setId] = useState<string>()
-  const expanderBody = useRef<string>()
   const [data, setData] = useState([])
+  const expanderBody = useRef<string>()
   const render = 0
 
   const {
