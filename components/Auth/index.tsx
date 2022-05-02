@@ -22,8 +22,8 @@ const Auth = () => {
           first: auth.name.first,
           last: auth.name.last,
           email: auth.email,
-          photoURL: auth.picture.thumbnail
-        }
+          photoURL: auth.picture.thumbnail,
+        },
       }
       dispatch(login(auths))
     }

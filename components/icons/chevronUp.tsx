@@ -2,12 +2,12 @@ const ChevronUp = ({
   color,
   size,
   height,
-  width
+  width,
 }: {
-  color?: string;
-  size?: number;
-  height?: number;
-  width?: number;
+  color?: string
+  size?: number
+  height?: number
+  width?: number
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +22,6 @@ const ChevronUp = ({
   >
     <path d="M18 15l-6-6-6 6" />
   </svg>
-);
+)
 
-export default ChevronUp;
+export default ChevronUp

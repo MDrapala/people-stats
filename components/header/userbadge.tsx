@@ -1,23 +1,23 @@
-import { useState } from 'react';
-import { DateTime } from 'luxon';
+import { useState } from 'react'
+import { DateTime } from 'luxon'
 
 // Redux
-import { logout } from '../../redux/slices/auth.slice';
-import { useAppSelector, useAppDispatch } from '../../redux/hooks';
+import { logout } from '../../redux/slices/auth.slice'
+import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 // Icons
-import ChevronDown from '../icons/chevronDown';
-import ChevronUp from '../icons/chevronUp';
-import ArrowOut from '../icons/arrowOut';
+import ChevronDown from '../icons/chevronDown'
+import ChevronUp from '../icons/chevronUp'
+import ArrowOut from '../icons/arrowOut'
 
 const UserBadge = () => {
-  const dispatch = useAppDispatch();
-  const { auth } = useAppSelector((state) => state);
+  const dispatch = useAppDispatch()
+  const { auth } = useAppSelector((state) => state)
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false)
   const signOut = () => {
-    dispatch(logout());
-  };
+    dispatch(logout())
+  }
 
   return (
     <>
@@ -66,7 +66,7 @@ const UserBadge = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default UserBadge;
+export default UserBadge

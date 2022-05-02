@@ -1,15 +1,15 @@
-import React from 'react';
-import Head from 'next/head';
+import React from 'react'
+import Head from 'next/head'
 
-import { useAppSelector } from '../../redux/hooks';
+import { useAppSelector } from '../../redux/hooks'
 
 // Components
-import Auth from '../Auth';
-import Header from '../header';
-import UserBadge from '../header/userbadge';
+import Auth from '../Auth'
+import Header from '../header'
+import UserBadge from '../header/userbadge'
 
 export default function Layout({ children }: { children: React.ReactElement }) {
-  const { auth } = useAppSelector((e) => e);
+  const { auth } = useAppSelector((e) => e)
 
   const content = (
     <div className="flex flex-row flex-auto overflow-hidden">
@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactElement }) {
         </div>
       </div>
     </div>
-  );
+  )
 
   return auth.isLoggingIn ? (
     <div className="flex flex-col h-screen bg-flim-bg">
@@ -45,5 +45,5 @@ export default function Layout({ children }: { children: React.ReactElement }) {
     </div>
   ) : (
     <Auth />
-  );
+  )
 }

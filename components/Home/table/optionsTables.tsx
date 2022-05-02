@@ -6,17 +6,17 @@ export const optionsManagement = {
       actived: false,
       left: {
         title: 'country',
-        activated: false
+        activated: false,
       },
       right: {
         title: 'Create Group',
-        activated: false
-      }
-    }
+        activated: false,
+      },
+    },
   },
   sort: {
     activated: true, // true = authrized sort filter
-    names: ['Id']
+    names: ['Id'],
   },
   link: {
     // For not use link redirect you don't need to set this
@@ -27,6 +27,6 @@ export const optionsManagement = {
   },
   csv: {
     actived: false,
-    name: 'country'
-  }
-};
+    name: 'country',
+  },
+}

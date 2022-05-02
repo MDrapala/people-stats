@@ -1,4 +1,4 @@
-import getUnicodeFlagIcon from 'country-flag-icons/unicode';
+import getUnicodeFlagIcon from 'country-flag-icons/unicode'
 
 export function countryCell({ row }) {
   return (
@@ -8,7 +8,7 @@ export function countryCell({ row }) {
         <div className="flex items-center pl-2">{row.original.country}</div>
       </div>
     </>
-  );
+  )
 }
 
 export function countCell({ row }) {
@@ -18,5 +18,5 @@ export function countCell({ row }) {
         <div className="flex items-center">{row.original.count}</div>
       </div>
     </>
-  );
+  )
 }

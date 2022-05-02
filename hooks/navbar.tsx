@@ -1,16 +1,16 @@
 // Icons (svg)
-import Users from '../components/icons/users';
-import ChartIcon from '../components/icons/chart';
+import Users from '../components/icons/users'
+import ChartIcon from '../components/icons/chart'
 
 export const restrictedAllRight = [
   {
     name: 'Dashboard',
     link: '/dashboard',
-    icon: <ChartIcon size={21} />
+    icon: <ChartIcon size={21} />,
   },
   {
     name: 'Users',
     link: '/users',
-    icon: <Users size={21} />
-  }
-];
+    icon: <Users size={21} />,
+  },
+]

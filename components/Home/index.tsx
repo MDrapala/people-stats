@@ -1,45 +1,45 @@
-import { useEffect, useState, useMemo } from 'react';
-import lodash from 'lodash';
+import { useEffect, useState, useMemo } from 'react'
+import lodash from 'lodash'
 
-import { DB_USER } from '../../lib/data/dbusers';
-import Donnuts from './stats/Donnuts';
+import { DB_USER } from '../../lib/data/dbusers'
+import Donnuts from './stats/Donnuts'
 
 // Tools tables
-import Tables from '../tools/tables';
-import { countryManagement } from './table/columnsTables';
-import { optionsManagement } from './table/optionsTables';
+import Tables from '../tools/tables'
+import { countryManagement } from './table/columnsTables'
+import { optionsManagement } from './table/optionsTables'
 
 const Dashboard = () => {
-  const columns = useMemo(() => countryManagement, []);
-  const [users, setUsers] = useState([]);
+  const columns = useMemo(() => countryManagement, [])
+  const [users, setUsers] = useState([])
 
   const loadingUsers = () => {
-    setUsers(DB_USER);
-  };
+    setUsers(DB_USER)
+  }
 
   useEffect(() => {
-    loadingUsers();
-  }, []);
+    loadingUsers()
+  }, [])
 
   // Gender Donnuts
-  const { female, male } = lodash.countBy(DB_USER, 'gender');
-  const labelGender = [];
+  const { female, male } = lodash.countBy(DB_USER, 'gender')
+  const labelGender = []
   users.map((user) => {
     if (!labelGender.includes(user.gender)) {
-      labelGender.push(user.gender);
+      labelGender.push(user.gender)
     }
-  });
+  })
 
   // Country Donnuts
-  const country = Object.entries(lodash.countBy(DB_USER, 'location.country')).map(
-    ([value]) => value
-  );
-  const labelCountry = [];
+  const country = Object.entries(
+    lodash.countBy(DB_USER, 'location.country')
+  ).map(([value]) => value)
+  const labelCountry = []
   users.map((user) => {
     if (!labelCountry.includes(user.location.country)) {
-      labelCountry.push(user.location.country);
+      labelCountry.push(user.location.country)
     }
-  });
+  })
 
   const data = <T,>(label: T, datas: T) => {
     return {
@@ -64,7 +64,7 @@ const Dashboard = () => {
             '#FF1493',
             '#C71585',
             '#DB7093',
-            '#FF00FF'
+            '#FF00FF',
           ],
           hoverBackgroundColor: [
             '#FF6384',
@@ -83,17 +83,17 @@ const Dashboard = () => {
             '#FF1493',
             '#C71585',
             '#DB7093',
-            '#FF00FF'
-          ]
-        }
-      ]
-    };
-  };
+            '#FF00FF',
+          ],
+        },
+      ],
+    }
+  }
 
-  const topCountry = [];
+  const topCountry = []
   Object.entries(lodash.countBy(DB_USER, 'location.country')).map(
     ([key, value]) => topCountry.push({ country: key, count: value })
-  );
+  )
 
   return (
     <>
@@ -137,6 +137,6 @@ const Dashboard = () => {
         </div>
       </div>
     </>
-  );
-};
-export default Dashboard;
+  )
+}
+export default Dashboard

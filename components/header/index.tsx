@@ -1,12 +1,12 @@
 // Redux
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 
 // Icons
-import { restrictedAllRight } from '../../hooks/navbar';
+import { restrictedAllRight } from '../../hooks/navbar'
 
 export default function Header() {
-  const router = useRouter();
-  const url = router.pathname.substring(1);
+  const router = useRouter()
+  const url = router.pathname.substring(1)
 
   return (
     <div className="relative bg-gray-50 dark:bg-gray-800">
@@ -30,5 +30,5 @@ export default function Header() {
         </div>
       </div>
     </div>
-  );
+  )
 }

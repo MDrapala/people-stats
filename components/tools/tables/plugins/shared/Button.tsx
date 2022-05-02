@@ -1,5 +1,5 @@
-import React from 'react';
-import { classNames } from './Utils';
+import React from 'react'
+import { classNames } from './Utils'
 
 export function Button({ children, ...rest }) {
   return (
@@ -12,7 +12,7 @@ export function Button({ children, ...rest }) {
     >
       {children}
     </button>
-  );
+  )
 }
 
 export function PageButton({ children, ...rest }) {
@@ -26,5 +26,5 @@ export function PageButton({ children, ...rest }) {
     >
       {children}
     </button>
-  );
+  )
 }

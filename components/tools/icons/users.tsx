@@ -2,12 +2,12 @@ const Users = ({
   color,
   size,
   height,
-  width
+  width,
 }: {
-  color?: string;
-  size?: number;
-  height?: number;
-  width?: number;
+  color?: string
+  size?: number
+  height?: number
+  width?: number
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +25,6 @@ const Users = ({
     <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
   </svg>
-);
+)
 
-export default Users;
+export default Users

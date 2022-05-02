@@ -2,12 +2,12 @@ const ChevronDown = ({
   color,
   size,
   height,
-  width
+  width,
 }: {
-  color?: string;
-  size?: number;
-  height?: number;
-  width?: number;
+  color?: string
+  size?: number
+  height?: number
+  width?: number
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +22,6 @@ const ChevronDown = ({
   >
     <path d="M6 9l6 6 6-6" />
   </svg>
-);
+)
 
-export default ChevronDown;
+export default ChevronDown

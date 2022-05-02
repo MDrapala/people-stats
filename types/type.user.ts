@@ -1,10 +1,10 @@
 export interface UserState {
-  isLoggingIn: boolean;
+  isLoggingIn: boolean
   user: {
-    uid: string;
-    first: string;
-    last: string;
-    email: string;
-    photoURL: string;
-  };
+    uid: string
+    first: string
+    last: string
+    email: string
+    photoURL: string
+  }
 }

@@ -2,12 +2,12 @@ const Power = ({
   color,
   size,
   height,
-  width
+  width,
 }: {
-  color?: string;
-  size?: number;
-  height?: number;
-  width?: number;
+  color?: string
+  size?: number
+  height?: number
+  width?: number
 }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -20,5 +20,5 @@ const Power = ({
     <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
     <line x1="12" y1="2" x2="12" y2="12"></line>
   </svg>
-);
-export default Power;
+)
+export default Power

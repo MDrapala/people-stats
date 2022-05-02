@@ -6,43 +6,43 @@ import {
   FirstCell,
   LastCell,
   AdressCell,
-  PhoneCell
-} from './lib/cell';
+  PhoneCell,
+} from './lib/cell'
 
 export const usersManagement = [
   {
     Header: 'Profile',
     accessor: 'location.street.number',
-    Cell: AvatarCell
+    Cell: AvatarCell,
   },
   {
     Header: 'Name',
     accessor: 'email',
-    Cell: UserCell
+    Cell: UserCell,
   },
   {
     Header: 'Title',
     accessor: 'name.title',
-    Cell: TitleCell
+    Cell: TitleCell,
   },
   {
     Header: 'Firstname',
     accessor: 'name.firstname',
-    Cell: FirstCell
+    Cell: FirstCell,
   },
   {
     Header: 'Lastname',
     accessor: 'name.lastname',
-    Cell: LastCell
+    Cell: LastCell,
   },
   {
     Header: 'Phone',
     accessor: 'phone',
-    Cell: PhoneCell
+    Cell: PhoneCell,
   },
   {
     Header: 'Adress',
     accessor: 'location.state',
-    Cell: AdressCell
-  }
-];
+    Cell: AdressCell,
+  },
+]

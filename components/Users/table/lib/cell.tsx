@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import copy from 'copy-to-clipboard';
-import Copy from '../../../icons/copy';
+import { useState } from 'react'
+import copy from 'copy-to-clipboard'
+import Copy from '../../../icons/copy'
 
-export function AvatarCell ({ row })  {
+export function AvatarCell({ row }) {
   return (
     <>
       <div className="flex items-center">
@@ -13,19 +13,19 @@ export function AvatarCell ({ row })  {
             referrerPolicy="no-referrer"
             alt=""
             src={
-              row.original.picture.thumbnail
-              || 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm'
+              row.original.picture.thumbnail ||
+              'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm'
             }
           />
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export function UserCell({ row }) {
-  const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState('');
+  const [copied, setCopied] = useState(false)
+  const [copiedName, setCopiedName] = useState('')
   return (
     <>
       <div
@@ -38,14 +38,14 @@ export function UserCell({ row }) {
         <div
           className="flex items-center"
           onClick={(e) => {
-            e.stopPropagation();
-            copy(`${row.original.first} ${row.original.last}`);
-            setCopied(true);
-            setCopiedName('userName');
+            e.stopPropagation()
+            copy(`${row.original.first} ${row.original.last}`)
+            setCopied(true)
+            setCopiedName('userName')
             setTimeout(() => {
-              setCopied(false);
-              setCopiedName('');
-            }, 1000);
+              setCopied(false)
+              setCopiedName('')
+            }, 1000)
           }}
         >
           {row.original.first} {row.original.last}
@@ -64,14 +64,14 @@ export function UserCell({ row }) {
         <div
           className="flex items-center"
           onClick={(e) => {
-            e.stopPropagation();
-            copy(row.original.email);
-            setCopied(true);
-            setCopiedName('email');
+            e.stopPropagation()
+            copy(row.original.email)
+            setCopied(true)
+            setCopiedName('email')
             setTimeout(() => {
-              setCopied(false);
-              setCopiedName('');
-            }, 1000);
+              setCopied(false)
+              setCopiedName('')
+            }, 1000)
           }}
         >
           {row?.original?.email?.substr(0, 22)}
@@ -84,12 +84,12 @@ export function UserCell({ row }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export function TitleCell({ row }) {
-  const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState('');
+  const [copied, setCopied] = useState(false)
+  const [copiedName, setCopiedName] = useState('')
   return (
     <>
       <div
@@ -100,14 +100,14 @@ export function TitleCell({ row }) {
         <div
           className="flex items-center"
           onClick={(e) => {
-            e.stopPropagation();
-            copy(row.original.name.title);
-            setCopied(true);
-            setCopiedName('title');
+            e.stopPropagation()
+            copy(row.original.name.title)
+            setCopied(true)
+            setCopiedName('title')
             setTimeout(() => {
-              setCopied(false);
-              setCopiedName('');
-            }, 1000);
+              setCopied(false)
+              setCopiedName('')
+            }, 1000)
           }}
         >
           {row.original.name.title}
@@ -119,12 +119,12 @@ export function TitleCell({ row }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export function FirstCell({ row }) {
-  const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState('');
+  const [copied, setCopied] = useState(false)
+  const [copiedName, setCopiedName] = useState('')
   return (
     <>
       <div
@@ -135,14 +135,14 @@ export function FirstCell({ row }) {
         <div
           className="flex items-center"
           onClick={(e) => {
-            e.stopPropagation();
-            copy(row.original.name.first);
-            setCopied(true);
-            setCopiedName('first');
+            e.stopPropagation()
+            copy(row.original.name.first)
+            setCopied(true)
+            setCopiedName('first')
             setTimeout(() => {
-              setCopied(false);
-              setCopiedName('');
-            }, 1000);
+              setCopied(false)
+              setCopiedName('')
+            }, 1000)
           }}
         >
           {row.original.name.first}
@@ -154,12 +154,12 @@ export function FirstCell({ row }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export function LastCell({ row }) {
-  const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState('');
+  const [copied, setCopied] = useState(false)
+  const [copiedName, setCopiedName] = useState('')
   return (
     <>
       <div
@@ -170,14 +170,14 @@ export function LastCell({ row }) {
         <div
           className="flex items-center"
           onClick={(e) => {
-            e.stopPropagation();
-            copy(row.original.name.last);
-            setCopied(true);
-            setCopiedName('last');
+            e.stopPropagation()
+            copy(row.original.name.last)
+            setCopied(true)
+            setCopiedName('last')
             setTimeout(() => {
-              setCopied(false);
-              setCopiedName('');
-            }, 1000);
+              setCopied(false)
+              setCopiedName('')
+            }, 1000)
           }}
         >
           {row.original.name.last}
@@ -189,12 +189,12 @@ export function LastCell({ row }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export function PhoneCell({ row }) {
-  const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState('');
+  const [copied, setCopied] = useState(false)
+  const [copiedName, setCopiedName] = useState('')
   return (
     <>
       <div
@@ -205,14 +205,14 @@ export function PhoneCell({ row }) {
         <div
           className="flex items-center"
           onClick={(e) => {
-            e.stopPropagation();
-            copy(row.original.phone);
-            setCopied(true);
-            setCopiedName('first');
+            e.stopPropagation()
+            copy(row.original.phone)
+            setCopied(true)
+            setCopiedName('first')
             setTimeout(() => {
-              setCopied(false);
-              setCopiedName('');
-            }, 1000);
+              setCopied(false)
+              setCopiedName('')
+            }, 1000)
           }}
         >
           {row.original.phone}
@@ -224,12 +224,12 @@ export function PhoneCell({ row }) {
         </div>
       </div>
     </>
-  );
+  )
 }
 
 export function AdressCell({ row }) {
-  const [copied, setCopied] = useState(false);
-  const [copiedName, setCopiedName] = useState('');
+  const [copied, setCopied] = useState(false)
+  const [copiedName, setCopiedName] = useState('')
   return (
     <>
       <div
@@ -240,14 +240,14 @@ export function AdressCell({ row }) {
         <div
           className="flex items-center"
           onClick={(e) => {
-            e.stopPropagation();
-            copy(row.original.location.adress);
-            setCopied(true);
-            setCopiedName('adress');
+            e.stopPropagation()
+            copy(row.original.location.adress)
+            setCopied(true)
+            setCopiedName('adress')
             setTimeout(() => {
-              setCopied(false);
-              setCopiedName('');
-            }, 1000);
+              setCopied(false)
+              setCopiedName('')
+            }, 1000)
           }}
         >
           {row.original.location.street.number} {row.original.location.state}
@@ -259,5 +259,5 @@ export function AdressCell({ row }) {
         </div>
       </div>
     </>
-  );
+  )
 }

@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react';
-import { DateTime } from 'luxon';
-import { DB_USER } from '../../../lib/data/dbusers';
-import { UserDatabase } from '../../../types/type.database';
+import { useEffect, useState } from 'react'
+import { DateTime } from 'luxon'
+import { DB_USER } from '../../../lib/data/dbusers'
+import { UserDatabase } from '../../../types/type.database'
 
 const UserDetails = () => {
   const id = window.location.pathname.substr(
     window.location.pathname.lastIndexOf('/') + 1
-  );
+  )
 
-  const [data, setData] = useState<UserDatabase>();
+  const [data, setData] = useState<UserDatabase>()
 
   useEffect(() => {
     for (const user of DB_USER) {
       if (user?.login?.uuid === id) {
-        setData(user as UserDatabase);
+        setData(user as UserDatabase)
       }
     }
-  }, [id]);
+  }, [id])
 
   return (
     <div className="bg-gray-100">
@@ -54,8 +54,8 @@ const UserDetails = () => {
                     <span>Member since</span>
                     <span className="ml-auto">
                       {data?.registered?.date
-                        ? data.registered.date
-                          && DateTime.fromISO(data.registered.date).toFormat(
+                        ? data.registered.date &&
+                          DateTime.fromISO(data.registered.date).toFormat(
                             'dd-mm-yyyy'
                           )
                         : 'N/A'}{' '}
@@ -130,8 +130,8 @@ const UserDetails = () => {
                     <div className="grid grid-cols-2">
                       <div className="px-4 py-2 font-semibold">Birthday</div>
                       <div className="px-4 py-2">
-                        {data?.dob?.date
-                          && DateTime.fromISO(data?.dob?.date).toFormat(
+                        {data?.dob?.date &&
+                          DateTime.fromISO(data?.dob?.date).toFormat(
                             'dd-mm-yyyy'
                           )}
                       </div>
@@ -144,7 +144,7 @@ const UserDetails = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default UserDetails;
+export default UserDetails

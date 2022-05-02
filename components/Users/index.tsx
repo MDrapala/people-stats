@@ -1,12 +1,12 @@
-import React, { useMemo } from 'react';
-import Tables from '../tools/tables';
+import React, { useMemo } from 'react'
+import Tables from '../tools/tables'
 
-import { DB_USER } from '../../lib/data/dbusers';
-import { usersManagement } from './table/columnsTables';
-import { optionsManagement } from './table/optionsTables';
+import { DB_USER } from '../../lib/data/dbusers'
+import { usersManagement } from './table/columnsTables'
+import { optionsManagement } from './table/optionsTables'
 
 const Users = () => {
-  const columns = useMemo(() => usersManagement, []);
+  const columns = useMemo(() => usersManagement, [])
 
   return (
     <div className="mx-auto px-4 sm:px-6 lg:px-8 pt-4">
@@ -21,7 +21,7 @@ const Users = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Users;
+export default Users
