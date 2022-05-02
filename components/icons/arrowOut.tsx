@@ -2,7 +2,7 @@ const ArrowOut = ({
   color,
   size,
   height,
-  width,
+  width
 }: {
   color?: string
   size?: number

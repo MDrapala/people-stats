@@ -2,7 +2,7 @@ const ChevronUp = ({
   color,
   size,
   height,
-  width,
+  width
 }: {
   color?: string
   size?: number

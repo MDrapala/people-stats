@@ -6,7 +6,7 @@ import {
   useFilters,
   useGlobalFilter,
   useSortBy,
-  usePagination,
+  usePagination
 } from 'react-table'
 import { useRouter } from 'next/router'
 
@@ -42,11 +42,11 @@ const Tables = ({ fetchData, columns, options }) => {
 
     state,
     preGlobalFilteredRows,
-    setGlobalFilter,
+    setGlobalFilter
   } = useTable(
     {
       columns,
-      data,
+      data
     },
     useFilters,
     useGlobalFilter,

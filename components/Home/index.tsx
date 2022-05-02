@@ -64,7 +64,7 @@ const Dashboard = () => {
             '#FF1493',
             '#C71585',
             '#DB7093',
-            '#FF00FF',
+            '#FF00FF'
           ],
           hoverBackgroundColor: [
             '#FF6384',
@@ -83,10 +83,10 @@ const Dashboard = () => {
             '#FF1493',
             '#C71585',
             '#DB7093',
-            '#FF00FF',
-          ],
-        },
-      ],
+            '#FF00FF'
+          ]
+        }
+      ]
     }
   }
 

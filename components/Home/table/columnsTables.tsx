@@ -5,10 +5,10 @@ export const countryManagement = [
   {
     Header: 'Country',
     accessor: 'location.country',
-    Cell: countryCell,
+    Cell: countryCell
   },
   {
     Header: 'Count',
-    Cell: countCell,
-  },
+    Cell: countCell
+  }
 ]

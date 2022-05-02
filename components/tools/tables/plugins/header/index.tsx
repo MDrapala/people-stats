@@ -6,7 +6,7 @@ const Header = ({
   preGlobalFilteredRows,
   setGlobalFilter,
   headerGroups,
-  state,
+  state
 }) => {
   return (
     <div className="flex justify-between mb-4">

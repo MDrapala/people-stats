@@ -2,7 +2,7 @@ import {
   ChevronDoubleLeftIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
-  ChevronDoubleRightIcon,
+  ChevronDoubleRightIcon
 } from '@heroicons/react/solid'
 
 import { Button, PageButton } from '../shared/Button'
@@ -16,7 +16,7 @@ const Pagination = ({
   previousPage,
   nextPage,
   canPreviousPage,
-  canNextPage,
+  canNextPage
 }) => (
   <div className="py-3 flex items-center justify-between">
     <div className="flex-1 flex justify-between sm:hidden">

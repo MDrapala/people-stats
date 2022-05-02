@@ -6,11 +6,11 @@ export const restrictedAllRight = [
   {
     name: 'Dashboard',
     link: '/dashboard',
-    icon: <ChartIcon size={21} />,
+    icon: <ChartIcon size={21} />
   },
   {
     name: 'Users',
     link: '/users',
-    icon: <Users size={21} />,
-  },
+    icon: <Users size={21} />
+  }
 ]

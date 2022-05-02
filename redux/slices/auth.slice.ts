@@ -8,8 +8,8 @@ export const initialState: UserState = {
     first: '',
     last: '',
     email: '',
-    photoURL: '',
-  },
+    photoURL: ''
+  }
 }
 
 export const authSlice = createSlice({
@@ -29,8 +29,8 @@ export const authSlice = createSlice({
     logout: (state) => {
       state.isLoggingIn = false
       console.log('logout')
-    },
-  },
+    }
+  }
 })
 
 export const { login, logout } = authSlice.actions

@@ -5,7 +5,7 @@ export const GlobalFilter = ({
   preGlobalFilteredRows,
   globalFilter,
   setGlobalFilter,
-  name,
+  name
 }) => {
   const count = preGlobalFilteredRows.length
   const [value, setValue] = useState(globalFilter)

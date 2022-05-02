@@ -6,7 +6,7 @@ import authReducer from './slices/auth.slice'
 const persistConfig = {
   key: 'root',
   version: 1,
-  storage,
+  storage
 }
 
 const persistedReducer = persistReducer(persistConfig, authReducer)
@@ -17,9 +17,9 @@ export function userStore() {
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: {
-          ignoredActions: [PERSIST],
-        },
-      }),
+          ignoredActions: [PERSIST]
+        }
+      })
   })
 }
 
