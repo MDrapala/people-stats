@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { login } from '../../redux/slices/auth.slice'
 import { useAppDispatch } from '../../redux/hooks'
 import { userLogin } from '../../lib/data/auth'
+import { UserState } from '../../types/type.user'
 
 const Auth = () => {
   const dispatch = useAppDispatch()
@@ -24,7 +25,7 @@ const Auth = () => {
           email: auth.email,
           photoURL: auth.picture.thumbnail
         }
-      }
+      } as UserState
       dispatch(login(auths))
     }
   }

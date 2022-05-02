@@ -31,22 +31,23 @@ const Dashboard = () => {
   })
 
   // Country Donnuts
-  const country = Object.entries(
-    lodash.countBy(DB_USER, 'location.country')
-  ).map(([value]) => value)
-  const labelCountry = []
+  let country = Object.entries(lodash.countBy(DB_USER, "location.country")).map(
+    ([key, value]) => {return { key, value }}
+  );
+
+  let labelCountry = [];
   users.map((user) => {
     if (!labelCountry.includes(user.location.country)) {
-      labelCountry.push(user.location.country)
+      labelCountry.push(user.location.country);
     }
-  })
+  });
 
   const data = <T,>(label: T, datas: T) => {
     return {
       labels: label,
       datasets: [
         {
-          datas,
+          data: datas,
           backgroundColor: [
             '#FF6384',
             '#36A2EB',
